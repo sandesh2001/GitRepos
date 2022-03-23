@@ -1,0 +1,109 @@
+Abstract
+BCI is used to communicate using brain signals and control external devices vwhich is sometimes done without involvement of the nervous system.These brain siganls are recorded using Electroencephalography(EEG) on which the BCI are dependent on.These signals follow a transition algorithm to generate commands.The accuracy of these algorithms has been improved using multi sensor data fusion.This paper reviews various BCI applications which include tele-presence,navigation,grasping of objects,etc. which uses multi sensor fusion and ML to control robot in performing a desired task.
+Introduction:
+BCI records and performs operations on brain signals of a person in completing a task.These brain signals are recorded using Electroencephalography(EEG),Electrocorticography(ECoG), and Near-Infrared Spectroscopy(NIRS) where EEG is the most commonly used method for BCI applications.BCI,using brain signals, helps to develop new kind of communication mechanism 
+which is heplful for those with motor disabilities like applications that include brain controlled limbs, chairs ,speech systems,etc.This Communication mechanism provided with interfacing the robot leads to possibilities to copy human actions.This robot resembles human body in its shape and the actions it can perform which makes it suitable for receiving signals and interact with its environment accordingly.These have a greater potential to perform day to day activities which makes them serve disabled to perform their daily activities.These systems can also be used in critical operations like disaster recovery and military operations.Security of these humanoids is a critical concern to be taken care of by preventing them from getting hacked or misused.
+
+A translation algorithm is used to generate the  control signals from the input brain signals for humanoid.Usually it takes long time for its training and accuracy achieved is also low.Multi sensor fusion has been used to improve the performance of these systems which helps to acheive high accuracy and also to improve the robustness of the system.
+
+  	Various applications are reviewed and for each application ,its overview ,the system  design and results related are conducted.
+	
+Nextly the paper is organised into different sections where section 2 discusses prerequisites needed to understand the paper.Section 3 is about the applications where brain signals controls the humanoid robot.Section 4 discusses humanoid control applications that uses BCI.
+Section 5 includes BCI controlled Humanoid application supported by augmented reality.Section 6 is the summary of the applications which are discussed.Section 7 concludes the work.
+
+
+
+2.Preliminary Knowledge
+
+This module prerequisites are discussed wich are required to know the works mentioned in the paper.
+
+2.1 Brain Computer Interface
+
+	Rehabilitation is a major area that BCI has its application.Those people with motor impairment,BCI acts as communication mechanism as their nervous system cannot perform the brain's signals.For example,if the brain thinks to lift the right hand,but due to the persons right hand being paralysed the hand maybe unable to move.THese brain signals can be sensed using EEG electrodes can be used and the right hand can be lifted.Several applications helped BCI to advance and it offers the possibilities of communication for those paralysed people or any people with different disabilities.The working of BCI is done in 3 stages.First stage is the input from the brain,which is performed using EEG.Second stage has a translation algorithm which maps the brains input signal to a predefined output command.Third and the last stage includes controlling of the external deviced based on the command from the previous stage.
+	BCI Input(First stage):
+		This stage contains of getting the data to multiple features regardinng of the brain's activity.Different functions are processed with different parts of the brain.For example,occipital lobe processes sensory functions i.e.,which are related to vision.Furthermore,planning,decision making and making of speech are done by frontal lobe.Based on the task to be performed,the EEG sensors acquire brain signals from the respective portion of the brain for processing.
+	Translation Algorithm(Second Stage):
+		This algorithm takes the brain signals as input and converts them into specific output command.This algorithms includes various classification algorithms like Linear Discriminant Analysis(LDA),Artificial Neural Networks(ANN),etc. for classifying actions.The transfer function used and its adaptability and the control output generated are the key features of the algorithm.This transfer function can be linear or non-linear.
+	BCI Output(Third Stage):
+		This stage deals with the final output.The output generated can be for application specific devices can be discrete or continuous.The discrete output can be used in cases like selecting among fixed outputs whereas continuous will help in navigating.
+
+2.2Hybrid BCI
+
+		The salient features of the brain signals differ from object to object.Even for the same subject,features vary from trial to trial.Sometimes analyzing a single feature can lead to loss of important information.Using machine learning for specifying and extracting features from the input makes facing the challenges very appropriate.These machine learning techniques are able to increase the accuracy of the decoding which is discussed laer in the paper.BCI system records and processes multiple signals to increase robustness,information transfer and to decrease training time.data fusion techniques and machine learning algorithms are used for fusion of these complementary signals.This is referred as BCI which is shown in below figure.
+
+
+
+
+
+
+		FIGURE
+
+
+
+
+Four major criteria to be fulfilled by any Hybrid BCI which are as follows:
+
+1. Brain signals must be used in the BCI System;
+2. The user should be able to control one of the brain signals intentionally;
+3. The BCI System should do real-time processing of the signal;
+4. User must be provided with the feedback of the BCI output.
+
+
+
+
+
+
+		TABLE
+
+
+
+
+
+
+
+2.3 Classification Algorithms
+
+	Classifiers in the BCI systems are to make sure good performance in terms of classification accuracy.Consider a man using a Bci controlled wheel chair which has the ability to control in which direction it has to turn based on the thoughts of the person.Multiple features are taken as input by these classification algorithms and distinguish between different classes.The feature which acts as input for controlling humanoids are of two types.(i)Temporal Features (ii)frequency Features.
+	Temporal features representws the amplitude of the signals that are generated with respect to time whereas frequency features represents frequency power of those signals.
+	Classification:The features from the signals of the brain to control commands are done by using different classifiers.Most commonly used classifiers are: Linear Discriminant analysis, Support Vector Machines , Artificial Neural Networks , and  Statistical
+classifiers.
+
+(Linear Discriminant Analysis
+
+	This is a linear classifier.The computational complexity of this analysis is low and hence time taken for the classification is reduced.This is a simple calssifier to use and visualise.This a simple technique which is suitable when small training data sets. Typical decision boundary of LDA is shown in Figure 2. For LDA, decision boundary
+are singly connected and convex. Figure 2 denotes 3 class classification in which the colour of the
+region denotes the class being predicted.
+
+
+
+		FIGURE 2
+
+
+Artificial Neural Networks:
+	
+		These neural networks are a type of non-linear classifier which is inspired from the structure of the neuron structure of the brain and is used to approximate non-linear functions.This technique is more complex compared to LDA as it requires number of parameters which makes it to take more time to generate output.Over-fitting are observed in case of ANNs.thus,selection of parameters to be done carefully.. The decision boundary of
+ANN can be seen in Figure 2, the non-linearity of the function is evident from the figure. The figure shows two classes, one represented using red colour and the other one using a blue colour that has been classified using ANN.
+
+Support Vector Machines(SVM):
+
+		SVM is a non-linear classifier.Setting up of configuration is not needed when using SVM.This is suitable when training data is less.Once the classifiers are trained,it makes it advantageous to classify brain signals for multiple sessions.These features generated may vary even for the same user.So models which are low sensitive to over-fitting will perform better.SVM performs well with high dimensional data.
+
+Statitical Classifiers:
+
+		Posterior probabilities are used to select class with high probability depending on the input features of every instance.This classifier uses prior knowledge to classify instances.These classifiers also performs even in case of uncertainity which can be expected ehile working with brain signals.Uncertainity is caused due to fatigue or learning effects.
+
+
+
+
+		TABLE
+
+
+
+2.4 Humanoids
+
+		Humanoid is a robot with a body structure and possess features similar to that of a human.Sensors,planning and control are the three main primitives for a humanoid.hese generally posess proprioceptive sensors to sense postion and to get data on what is touched it has exteroceptive sensors.Actuators are present to mimic the action of muscles and joints.Some commonly used BCI-controlled humanoid robots are given below:
+
+	1.Nao Humanoid( Softbank Robotics)
+	2.HRP-2 Humanoid(Kawada Industries)
+	3.KT-X Humanoid (Kumotek Robotics) 
+	4.DARwIn-OP (Robotis) 
