@@ -1,2 +1,2 @@
 # GitRepos
-this is a great repository
+this is a git repository
